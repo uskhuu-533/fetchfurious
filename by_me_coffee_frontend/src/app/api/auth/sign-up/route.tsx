@@ -5,7 +5,7 @@ import * as z from "zod";
 
 const prisma = new PrismaClient();
 
-export const signUpSchema = z.object({
+const signUpSchema = z.object({
   email: z.string().email("Invalid email address"),
   password: z.string().min(8, "Password must be at least 8 characters"),
   username: z.string().min(3, "Username must be at least 3 characters"),
